@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const LINKS = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
-  { name: "Portfolio", href: "/#portfolio" },
-  { name: "Blog", href: "/#blog" }
+  { name: "About", href: "#about" },
+  { name: "Portfolio", href: "#portfolio" },
+  { name: "Blog", href: "#blog" }
 ];
 
 export default function Navbar() {
@@ -19,8 +19,8 @@ export default function Navbar() {
       <h1 className={pragmatica.className + " uppercase text-3xl tracking-wide"}>SURO<span className="text-primary">JIT.</span></h1>
 
       <div className={`space-y-5 md:space-y-0 flex flex-col md:flex-row md:space-x-8 md:static absolute w-1/2 md:w-auto bg-dark-gray md:bg-none bg-opacity-80 md:bg-opacity-100 backdrop-blur-md md:backdrop-blur-0 top-[70px] h-screen md:h-auto pl-5 md:pl-0 pt-5 md:pt-0 ${isOpen ? "right-0 ease-out transition-all duration-300" : "-right-80 sm:-right-96 ease-out transition-all duration-300"}`}>
-        {LINKS.map((section: any, index: number) => (<Link className="hover:text-primary transition-colors" key={index} href={section.href} scroll={false}>{section.name}</Link>))}
-        <Link href={"/#contact"} className="block md:hidden hover:text-primary transition-colors">Contact</Link>
+        {LINKS.map((section: any, index: number) => (<Link className="hover:text-primary transition-colors" key={index} href={section.href}>{section.name}</Link>))}
+        <Link scroll={false} href={"#contact"} className="block md:hidden hover:text-primary transition-colors">Contact</Link>
       </div>
 
 

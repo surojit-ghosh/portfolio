@@ -1,18 +1,24 @@
+import { MoveRight, ArrowDownToLine } from "lucide-react";
+
 import Section from "@/components/Section";
+import { socials } from "@/data/socials";
 import { montserrat } from "@/fonts";
 
 export default function Hero() {
     return (<Section height="screen" className="flex items-center max-w-5xl">
         <div className={montserrat.className}>
-            <h2 className="text-primary text-lg mb-4">Hi, my name is</h2>
-            <h1 className="font-bold" style={{ lineHeight: "1.25", fontSize: "clamp(36px, 4vw, 48px)" }}>Surojit Ghosh.</h1>
-            <h1 className="mt-1 text-medium-gray md:text-5xl font-bold max-w-3xl" style={{ lineHeight: "1.25", fontSize: "clamp(36px, 4vw, 48px)" }}>A Full Stack Web Developer based in India.</h1>
+            <h2 className="text-primary md:text-lg">Hello, I'm</h2>
+            <h1 className="font-bold text-transparent bg-clip-text bg-gradient-to-r to-primary from-light-gray" style={{ fontSize: "clamp(40px, 5vw, 72px)" }}>Surojit Ghosh.</h1>
 
-            <p className="mt-5 mb-8 font-medium max-w-2xl text-medium-gray text-lg">With a love for coding and a commitment to excellence, I've been turning digital dreams into reality for over 2 years. Let's bring your vision to life!</p>
+            <p className="mt-5 font-medium max-w-2xl text-medium-gray md:text-lg capitalize">A Full Stack Web Developer based in India With 2+ years of experience.</p>
 
-            <div className="space-x-5">
-                <button className="px-5 py-2 border-2 border-primary bg-primary hover:bg-primary-hover transition-all rounded-sm text-dark-gray">Hire Me</button>
-                <button className="px-5 py-2 border-2 border-primary hover:bg-primary hover:bg-opacity-10 transition-all rounded-sm">Download CV</button>
+            <div className="my-8 flex gap-3">
+                {socials.map((social: any, index: number) => (<a className="hover:text-light-gray text-medium-gray transition-all" key={index} href={social.url} rel="noreferrer" target="_blank"><social.icon size={22} /></a>))}
+            </div>
+
+            <div className="gap-5 flex pt-2">
+                <button className="px-4 md:px-5 py-2 border-2 border-primary bg-primary hover:bg-primary-hover transition-all rounded-sm text-dark-gray flex items-center justify-center gap-2">Lets Talk <MoveRight /></button>
+                <button className="px-4 md:px-5 py-2 border-2 border-primary hover:bg-primary hover:bg-opacity-10 transition-all rounded-sm flex items-center justify-center gap-2">Download CV <ArrowDownToLine /></button>
             </div>
         </div>
     </Section>);

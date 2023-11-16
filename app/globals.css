@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-dark-gray text-light-gray;
-  line-height: 1;
-  scroll-behavior: smooth
 }
 
 button,
