@@ -1,25 +1,64 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { pragmatica } from "@/fonts";
 import Link from "next/link";
 
 const LINKS = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Service", href: "#service" },
   { name: "Portfolio", href: "#portfolio" },
   { name: "Blog", href: "#blog" }
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState("home");
 
-  return (<header className="fixed w-full right-0 bg-dark-gray bg-opacity-80 backdrop-blur-md">
-    <nav className="max-w-7xl px-[5vw] h-[72px] flex justify-between items-center mx-auto">
+  useEffect(() => {
+    const sections = document.querySelectorAll(".app-section") as NodeListOf<HTMLElement>;
+
+    function getSectionVisibility(section: HTMLElement): number {
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+      return (visibleHeight / section.offsetHeight) * 100;
+    };
+
+    function findMostVisibleSection(): HTMLElement | null {
+      let maxVisibility = 0;
+      let mostVisibleSection: HTMLElement | null = null;
+
+      sections.forEach((section) => {
+        const visibility = getSectionVisibility(section);
+
+        if (visibility > maxVisibility) {
+          maxVisibility = visibility;
+          mostVisibleSection = section;
+        };
+      });
+
+      return mostVisibleSection;
+    };
+
+    window.addEventListener("scroll", () => {
+      const mostVisibleSection = findMostVisibleSection();
+
+      if (mostVisibleSection) {
+        setCurrentSection(mostVisibleSection?.id);
+      } else {
+        setCurrentSection("");
+      }
+    });
+  }, []);
+
+  return (<header className={"fixed w-full right-0 bg-dark-gray bg-opacity-80 backdrop-blur-md z-10"}>
+    <nav className="max-w-7xl px-5 h-[72px] flex justify-between items-center mx-auto">
       <h1 className={pragmatica.className + " uppercase text-3xl tracking-wide"}>SURO<span className="text-primary">JIT.</span></h1>
 
       <div className={`space-y-5 md:space-y-0 flex flex-col md:flex-row md:space-x-8 md:static absolute w-1/2 md:w-auto bg-dark-gray md:bg-none bg-opacity-80 md:bg-opacity-100 backdrop-blur-md md:backdrop-blur-0 top-[70px] h-screen md:h-auto pl-5 md:pl-0 pt-5 md:pt-0 ${isOpen ? "right-0 ease-out transition-all duration-300" : "-right-80 sm:-right-96 ease-out transition-all duration-300"}`}>
-        {LINKS.map((section: any, index: number) => (<Link className="hover:text-primary transition-colors" key={index} href={section.href}>{section.name}</Link>))}
+        {LINKS.map((section: any, index: number) => (<Link className={`nav-link hover:text-primary transition-colors ${currentSection.length && (section.href.includes(currentSection) ? "text-primary" : "")}`} key={index} href={section.href}>{section.name}</Link>))}
         <Link scroll={false} href={"#contact"} className="block md:hidden hover:text-primary transition-colors">Contact</Link>
       </div>
 
@@ -34,4 +73,4 @@ export default function Navbar() {
       </div>
     </nav>
   </header>);
-}; 
+};

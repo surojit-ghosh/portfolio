@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import {albert_sans } from '@/fonts';
+import { montserrat } from '@/fonts';
 
 export const metadata: Metadata = {
   title: 'Surojit Ghosh',
@@ -9,6 +9,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (<html lang="en">
-    <body className={albert_sans.className}>{children}</body>
+    <body className={montserrat.className}>{children}</body>
   </html>);
 };
