@@ -7,7 +7,7 @@ export default function About() {
         <div className={`flex flex-col items-center md:flex-row md:items-start gap-10`}>
             <div className="flex w-full flex-col gap-5 md:gap-10">
                 {/* <div className="flex w-full items-center gap-3"> */}
-                <h1 className="text-3xl font-semibold">About Me</h1>
+                <h1 className="text-3xl font-semibold mb-5 md:mb-0">About Me</h1>
                 {/* <span className="flex-1 bg-medium-gray h-0.5 opacity-50"></span> */}
                 {/* </div> */}
 
