@@ -1,5 +1,6 @@
-import { Instagram, Github, Linkedin } from "lucide-react";
+import { Instagram, Github, Linkedin, Mail } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import { email } from "./data";
 
 export const socials = [
     {
@@ -11,6 +12,11 @@ export const socials = [
         name: "LinkedIN",
         url: "https://www.linkedin.com/in/surojit10x/",
         icon: Linkedin
+    },
+    {
+        name: "Email",
+        url: `mailto:${email}`,
+        icon: Mail
     },
     {
         name: "Twitter (X)",
