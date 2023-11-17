@@ -1,5 +1,7 @@
 import Section from "@/components/Section";
+import { email } from "@/content/data";
 import { services } from "@/content/services";
+import { MoveRight } from "lucide-react";
 
 export default function Skillst() {
     return (<Section id="service" height="fit" className="">
@@ -11,6 +13,10 @@ export default function Skillst() {
                 <h2 className="text-center text-xl font-semibold text-light-gray uppercase">{service.title}</h2>
                 <p className="text-center text-medium-gray">{service.description}</p>
             </div>))}
+        </div>
+
+        <div className="mt-10 flex items-center justify-center">
+            <a href={`mailto:${email}`} className="text-lg font-medium w-fit flex items-center justify-center gap-2 text-primary relative after:content-[''] after:bg-primary-hover after:h-0.5 after:absolute after:w-0 after:left-0 after:-bottom-1 after:rounded-xl after:duration-500 after:ease-out hover:after:w-full">Lets talk about Your project <MoveRight /></a>
         </div>
     </Section>);
 }; 
