@@ -2,35 +2,35 @@ export const skills = [
     {
         category: "frontend",
         skills: [
-            { name: "HTML5", bg: "#f06529", textColor: "#ffffff" },
-            { name: "CSS3", bg: "#2965f1", textColor: "#ffffff" },
-            { name: "Tailwind CSS", bg: "#38bdf8", textColor: "#ffffff" },
-            { name: "JavaScript", bg: "#f0db4f", textColor: "#323330" },
-            { name: "ReactJS", bg: "#61dafb", textColor: "#20232a" },
-            { name: "NextJS", bg: "#000000", textColor: "#ededed" }
+            { name: "HTML5", icon: "/icons/html.png" },
+            { name: "CSS3", icon: "/icons/css.png" },
+            { name: "JavaScript", icon: "/icons/javascript.png" },
+            { name: "ReactJS", icon: "/icons/react.png" },
+            { name: "NextJS", icon: "/icons/nextjs.png" },
+            { name: "Tailwind CSS", icon: "/icons/tailwindcss.png" },
         ]
     },
     {
         category: "backend",
         skills: [
-            { name: "NodeJS", bg: "#026e00", textColor: "#ffffff" },
-            { name: "ExpressJS", bg: "#ffffff", textColor: "#000000" },
-            { name: "Strapi", bg: "#4844ff", textColor: "#fffefe" }
+            { name: "NodeJS", icon: "/icons/nodejs.png" },
+            { name: "ExpressJS", icon: "/icons/expressjs.png" },
+            { name: "Strapi", icon: "/icons/strapi.png" }
         ]
     },
     {
         category: "database",
         skills: [
-            { name: "MongoDB", bg: "#01ec64", textColor: "#011e2c" }
+            { name: "MongoDB", icon: "/icons/mongodb.png" }
         ]
     },
     {
         category: "tools",
         skills: [
-            { name: "VS Code", bg: "#45adf4", textColor: "#2c2b30" },
-            { name: "GitHub", bg: "#24292e", textColor: "#ffffff" },
-            { name: "GIT", bg: "#f05539", textColor: "#ffffff" },
-            { name: "Notion", bg: "#000000", textColor: "#ffffff" },
+            { name: "VS Code", icon: "/icons/vs-code.png" },
+            { name: "GitHub", icon: "/icons/github.png" },
+            { name: "GIT", icon: "/icons/git.png" },
+            { name: "Notion", icon: "/icons/notion.png" },
         ]
     }
 ];
