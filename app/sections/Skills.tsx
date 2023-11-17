@@ -1,5 +1,5 @@
 import Section from "@/components/Section";
-import { skills } from "@/data/skills";
+import { skills } from "@/content/skills";
 import Image from "next/image";
 
 export default function Skillst() {

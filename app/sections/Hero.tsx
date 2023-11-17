@@ -1,7 +1,7 @@
 import { MoveRight, ArrowDownToLine } from "lucide-react";
 
 import Section from "@/components/Section";
-import { socials } from "@/data/socials";
+import { socials } from "@/content/socials";
 
 export default function Hero() {
     return (<Section id="home" height="screen" className="flex items-center justify-center max-w-5xl">

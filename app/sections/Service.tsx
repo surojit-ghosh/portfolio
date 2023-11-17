@@ -1,5 +1,5 @@
 import Section from "@/components/Section";
-import { services } from "@/data/services";
+import { services } from "@/content/services";
 
 export default function Skillst() {
     return (<Section id="service" height="fit" className="">
