@@ -15,6 +15,7 @@ const LINKS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState("home");
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   useEffect(() => {
     const sections = document.querySelectorAll(".app-section") as NodeListOf<HTMLElement>;
@@ -51,14 +52,28 @@ export default function Navbar() {
         setCurrentSection("");
       }
     });
+
+
+    // Hide and unhide navbar
+    let prevScrollPos = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const isScrollingDown = prevScrollPos < currentScrollPos && currentScrollPos >= 100;
+
+      setIsNavbarVisible(!isScrollingDown);
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener('scroll', handleScroll);
   }, []);
 
-  return (<header className={"fixed w-full right-0 bg-dark-gray bg-opacity-80 backdrop-blur-md z-10"}>
+  return (<header className={"fixed w-full right-0 bg-dark-gray bg-opacity-80 backdrop-blur-md z-10 transition-all ease-out duration-500 " + `${isNavbarVisible ? "top-0" : "-top-20"}`}>
     <nav className="max-w-7xl px-5 h-[72px] flex justify-between items-center mx-auto">
       <h1 className={pragmatica.className + " uppercase text-3xl tracking-wide"}>SURO<span className="text-primary">JIT.</span></h1>
 
       <div className={`space-y-5 md:space-y-0 flex flex-col md:flex-row md:space-x-8 md:static absolute w-1/2 md:w-auto bg-dark-gray md:bg-none bg-opacity-80 md:bg-opacity-100 backdrop-blur-md md:backdrop-blur-0 top-[70px] h-screen md:h-auto pl-5 md:pl-0 pt-5 md:pt-0 ${isOpen ? "right-0 ease-out transition-all duration-300" : "-right-80 sm:-right-96 ease-out transition-all duration-300"}`}>
-        {LINKS.map((section: any, index: number) => (<Link className={`nav-link hover:text-primary transition-colors ${currentSection.length && (section.href.includes(currentSection) ? "text-primary" : "")}`} key={index} href={section.href}>{section.name}</Link>))}
+        {LINKS.map((section: any, index: number) => (<Link onClick={() => setIsOpen(!isOpen)} className={`nav-link hover:text-primary transition-colors ${currentSection.length && (section.href.includes(currentSection) ? "text-primary" : "")}`} key={index} href={section.href}>{section.name}</Link>))}
         <Link scroll={false} href={"#contact"} className="block md:hidden hover:text-primary transition-colors">Contact</Link>
       </div>
 
