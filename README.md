@@ -44,3 +44,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 -   [ ] testimonials
 -   [ ] techstack section can be better
 -   [ ] latest blogs
+-   [ ] studies
+-   [ ] experience
