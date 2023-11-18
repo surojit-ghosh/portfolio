@@ -4,7 +4,7 @@ import { services } from "@/content/services";
 import { MoveRight } from "lucide-react";
 
 export default function Skillst() {
-    return (<Section id="service" height="fit" className="">
+    return (<Section id="service" className="">
         <h1 className="text-3xl font-semibold mb-10">My Services</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

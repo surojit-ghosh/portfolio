@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 import { socials } from "@/content/socials";
 
 export default function Hero() {
-    return (<Section id="home" height="screen" className="flex items-center justify-center max-w-5xl">
+    return (<Section id="home" className="flex items-center justify-center max-w-5xl min-h-screen">
         <div>
             <h2 className="text-primary md:text-lg">Hello, I'm</h2>
             <h1 className="font-bold text-transparent bg-clip-text bg-gradient-to-r to-primary from-light-gray" style={{ fontSize: "clamp(40px, 5vw, 72px)" }}>Surojit Ghosh.</h1>

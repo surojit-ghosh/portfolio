@@ -3,7 +3,7 @@ import { skills } from "@/content/skills";
 import Image from "next/image";
 
 export default function Skillst() {
-    return (<Section id="about" height="fit" className="">
+    return (<Section id="about" className="">
         <h1 className="text-3xl font-semibold mb-10">My Skills</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
