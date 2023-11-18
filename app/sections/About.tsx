@@ -1,6 +1,7 @@
 import { MoveRight, ArrowDownToLine } from "lucide-react";
 import Section from "@/components/Section";
 import Image from "next/image";
+import { email } from "@/content/data";
 
 export default function About() {
     return (<Section id="about" className="">
@@ -17,8 +18,8 @@ export default function About() {
                 </div>
 
                 <div className="gap-5 flex pt-2">
-                    <button className="px-4 md:px-5 py-2 border-2 border-primary bg-primary hover:bg-primary-hover transition-all rounded-sm text-dark-gray flex items-center justify-center gap-2">Lets Talk <MoveRight /></button>
-                    <button className="px-4 md:px-5 py-2 border-2 border-primary hover:bg-primary hover:bg-opacity-10 transition-all rounded-sm flex items-center justify-center gap-2">Download CV <ArrowDownToLine /></button>
+                    <a href={`mailto:${email}`} rel="noreferrer" target="_blank" className="px-4 md:px-5 py-2 border-2 border-primary bg-primary hover:bg-primary-hover transition-all rounded-sm text-dark-gray flex items-center justify-center gap-2">Lets Talk <MoveRight /></a>
+                    {/* <button className="px-4 md:px-5 py-2 border-2 border-primary hover:bg-primary hover:bg-opacity-10 transition-all rounded-sm flex items-center justify-center gap-2">Download CV <ArrowDownToLine /></button> */}
                 </div>
             </div>
 

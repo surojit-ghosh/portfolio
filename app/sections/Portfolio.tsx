@@ -4,7 +4,7 @@ import { roboto_mono } from "@/fonts";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 
-export default function Skillst() {
+export default function Portfolio() {
     return (<Section id="portfolio" className="">
         <h1 className="text-3xl font-semibold text-start w-full mb-10">Portfolio</h1>
         <div className="flex flex-col items-center justify-center gap-5 md:gap-10">

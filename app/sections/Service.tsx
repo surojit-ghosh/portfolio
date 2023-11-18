@@ -3,7 +3,7 @@ import { email } from "@/content/data";
 import { services } from "@/content/services";
 import { MoveRight } from "lucide-react";
 
-export default function Skillst() {
+export default function Service() {
     return (<Section id="service" className="">
         <h1 className="text-3xl font-semibold mb-10">My Services</h1>
 
@@ -16,7 +16,7 @@ export default function Skillst() {
         </div>
 
         <div className="mt-10 flex items-center justify-center">
-            <a href={`mailto:${email}`} className="text-lg font-medium w-fit flex items-center justify-center gap-2 text-primary relative after:content-[''] after:bg-primary-hover after:h-0.5 after:absolute after:w-0 after:left-0 after:-bottom-1 after:rounded-xl after:duration-500 after:ease-out hover:after:w-full">Lets talk about Your project <MoveRight /></a>
+            <a href={`mailto:${email}`} rel="noreferrer" target="_blank" className="text-lg font-medium w-fit flex items-center justify-center gap-2 text-primary relative after:content-[''] after:bg-primary-hover after:h-0.5 after:absolute after:w-0 after:left-0 after:-bottom-1 after:rounded-xl after:duration-500 after:ease-out hover:after:w-full">Lets talk about Your project <MoveRight /></a>
         </div>
     </Section>);
 }; 

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
-import { About, Hero, Portfolio, Service, Skills } from "./sections";
+import { About, Contact, Hero, Portfolio, Service, Skills } from "./sections";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (<>
@@ -9,8 +10,7 @@ export default function Home() {
     <Skills />
     <Service />
     {/* <Portfolio /> */}
-    {/* TODO Testimonials */}
-     {/* TODO recent blogs */}
-    {/* TODO contact */}
+    <Contact />
+    <Footer />
   </>);
 };

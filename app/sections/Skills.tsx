@@ -2,7 +2,7 @@ import Section from "@/components/Section";
 import { skills } from "@/content/skills";
 import Image from "next/image";
 
-export default function Skillst() {
+export default function Skills() {
     return (<Section id="about" className="">
         <h1 className="text-3xl font-semibold mb-10">My Skills</h1>
 
