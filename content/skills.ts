@@ -22,7 +22,7 @@ export const skills = [
         category: "database",
         skills: [
             { name: "MongoDB", icon: "/icons/mongodb.png" },
-            { name: "MongoDB", icon: "/icons/prisma-orm.png" }
+            { name: "Prisma", icon: "/icons/prisma-orm.png" }
         ]
     },
     {
